@@ -6,6 +6,7 @@
 # Step 1:
 # Create dockerpath
 # dockerpath=<your docker ID/path>
+dockerpath="project4"
 
 # Step 2:  
 # Authenticate & tag
