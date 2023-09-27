@@ -17,6 +17,7 @@ def scale(payload):
     scaler = StandardScaler().fit(payload.astype(float))
     scaled_adhoc_predict = scaler.transform(payload.astype(float))
     return scaled_adhoc_predict
+    
 
 @app.route("/")
 def home():
@@ -63,6 +64,7 @@ def predict():
     # get an output prediction from the pretrained model, clf
     prediction = list(clf.predict(scaled_payload))
     # TO DO:  Log the output prediction value
+    LOG.info(f"output prediction : \n{prediction}")
     return jsonify({'prediction': prediction})
 
 if __name__ == "__main__":
