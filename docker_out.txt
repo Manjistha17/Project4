@@ -1,0 +1,121 @@
+(.devops) voclabs:~/environment/Project4 (main) $ ./run_docker.sh
+Sending build context to Docker daemon  5.836MB
+Step 1/6 : FROM python:3.7.3-stretch
+ ---> 34a518642c76
+Step 2/6 : WORKDIR /app
+ ---> Using cache
+ ---> 57f59c9d8251
+Step 3/6 : copy . app.py /app/
+ ---> a2c5d6c6987c
+Step 4/6 : RUN pip install --no-cache-dir --upgrade pip &&    pip install --no-cache-dir --trusted-host pypi.python.org -r requirements.txt
+ ---> Running in 02f3606632d1
+Collecting pip
+  Downloading https://files.pythonhosted.org/packages/50/c2/e06851e8cc28dcad7c155f4753da8833ac06a5c704c109313b8d5a62968a/pip-23.2.1-py3-none-any.whl (2.1MB)
+Installing collected packages: pip
+  Found existing installation: pip 19.1.1
+    Uninstalling pip-19.1.1:
+      Successfully uninstalled pip-19.1.1
+Successfully installed pip-23.2.1
+Collecting Click==7.0 (from -r requirements.txt (line 1))
+  Downloading Click-7.0-py2.py3-none-any.whl (81 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 81.3/81.3 kB 45.6 MB/s eta 0:00:00
+Collecting Flask==1.0.2 (from -r requirements.txt (line 2))
+  Downloading Flask-1.0.2-py2.py3-none-any.whl (91 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 91.4/91.4 kB 139.4 MB/s eta 0:00:00
+Collecting itsdangerous==1.1.0 (from -r requirements.txt (line 3))
+  Downloading itsdangerous-1.1.0-py2.py3-none-any.whl (16 kB)
+Collecting Jinja2==2.10.3 (from -r requirements.txt (line 4))
+  Downloading Jinja2-2.10.3-py2.py3-none-any.whl (125 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 125.3/125.3 kB 135.8 MB/s eta 0:00:00
+Collecting MarkupSafe==1.1.1 (from -r requirements.txt (line 5))
+  Downloading MarkupSafe-1.1.1-cp37-cp37m-manylinux2010_x86_64.whl (33 kB)
+Collecting numpy==1.17.2 (from -r requirements.txt (line 6))
+  Downloading numpy-1.17.2-cp37-cp37m-manylinux1_x86_64.whl (20.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 20.3/20.3 MB 119.0 MB/s eta 0:00:00
+Collecting pandas==0.24.2 (from -r requirements.txt (line 7))
+  Downloading pandas-0.24.2-cp37-cp37m-manylinux1_x86_64.whl (10.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.1/10.1 MB 119.2 MB/s eta 0:00:00
+Collecting python-dateutil==2.8.0 (from -r requirements.txt (line 8))
+  Downloading python_dateutil-2.8.0-py2.py3-none-any.whl (226 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 226.8/226.8 kB 138.1 MB/s eta 0:00:00
+Collecting pytz==2019.3 (from -r requirements.txt (line 9))
+  Downloading pytz-2019.3-py2.py3-none-any.whl (509 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 509.2/509.2 kB 133.8 MB/s eta 0:00:00
+Collecting scikit-learn==0.20.3 (from -r requirements.txt (line 10))
+  Downloading scikit_learn-0.20.3-cp37-cp37m-manylinux1_x86_64.whl (5.4 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.4/5.4 MB 122.0 MB/s eta 0:00:00
+Collecting scipy==1.3.1 (from -r requirements.txt (line 11))
+  Downloading scipy-1.3.1-cp37-cp37m-manylinux1_x86_64.whl (25.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 25.2/25.2 MB 116.1 MB/s eta 0:00:00
+Collecting six==1.12.0 (from -r requirements.txt (line 12))
+  Downloading six-1.12.0-py2.py3-none-any.whl (10 kB)
+Collecting Werkzeug==0.16.0 (from -r requirements.txt (line 13))
+  Downloading Werkzeug-0.16.0-py2.py3-none-any.whl (327 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 327.3/327.3 kB 139.0 MB/s eta 0:00:00
+Collecting pylint==2.4.4 (from -r requirements.txt (line 14))
+  Downloading pylint-2.4.4-py3-none-any.whl (302 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 303.0/303.0 kB 145.8 MB/s eta 0:00:00
+Collecting astroid<2.4,>=2.3.0 (from pylint==2.4.4->-r requirements.txt (line 14))
+  Downloading astroid-2.3.3-py3-none-any.whl (205 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 205.7/205.7 kB 143.1 MB/s eta 0:00:00
+Collecting isort<5,>=4.2.5 (from pylint==2.4.4->-r requirements.txt (line 14))
+  Downloading isort-4.3.21-py2.py3-none-any.whl (42 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 42.3/42.3 kB 110.7 MB/s eta 0:00:00
+Collecting mccabe<0.7,>=0.6 (from pylint==2.4.4->-r requirements.txt (line 14))
+  Downloading mccabe-0.6.1-py2.py3-none-any.whl (8.6 kB)
+Collecting lazy-object-proxy==1.4.* (from astroid<2.4,>=2.3.0->pylint==2.4.4->-r requirements.txt (line 14))
+  Downloading lazy_object_proxy-1.4.3-cp37-cp37m-manylinux1_x86_64.whl (56 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 56.5/56.5 kB 113.4 MB/s eta 0:00:00
+Collecting wrapt==1.11.* (from astroid<2.4,>=2.3.0->pylint==2.4.4->-r requirements.txt (line 14))
+  Downloading wrapt-1.11.2.tar.gz (27 kB)
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status 'done'
+Collecting typed-ast<1.5,>=1.4.0 (from astroid<2.4,>=2.3.0->pylint==2.4.4->-r requirements.txt (line 14))
+  Downloading typed_ast-1.4.3-cp37-cp37m-manylinux1_x86_64.whl (743 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 743.4/743.4 kB 143.1 MB/s eta 0:00:00
+Building wheels for collected packages: wrapt
+  Building wheel for wrapt (setup.py): started
+  Building wheel for wrapt (setup.py): finished with status 'done'
+  Created wheel for wrapt: filename=wrapt-1.11.2-cp37-cp37m-linux_x86_64.whl size=71328 sha256=1130b60627de044aecb20c0a54de677208af80734af6df71f2403bceab25d9db
+  Stored in directory: /tmp/pip-ephem-wheel-cache-abk9ux9m/wheels/23/5f/62/304b411f20be41821465a82bc98baabc5e68c3cdd1eb99db71
+Successfully built wrapt
+DEPRECATION: pandas 0.24.2 has a non-standard dependency specifier pytz>=2011k. pip 23.3 will enforce this behaviour change. A possible replacement is to upgrade to a newer version of pandas or contact the author to suggest that they release a version with a conforming dependency specifiers. Discussion can be found at https://github.com/pypa/pip/issues/12063
+Installing collected packages: wrapt, typed-ast, pytz, mccabe, Werkzeug, six, numpy, MarkupSafe, lazy-object-proxy, itsdangerous, isort, Click, scipy, python-dateutil, Jinja2, astroid, scikit-learn, pylint, pandas, Flask
+Successfully installed Click-7.0 Flask-1.0.2 Jinja2-2.10.3 MarkupSafe-1.1.1 Werkzeug-0.16.0 astroid-2.3.3 isort-4.3.21 itsdangerous-1.1.0 lazy-object-proxy-1.4.3 mccabe-0.6.1 numpy-1.17.2 pandas-0.24.2 pylint-2.4.4 python-dateutil-2.8.0 pytz-2019.3 scikit-learn-0.20.3 scipy-1.3.1 six-1.12.0 typed-ast-1.4.3 wrapt-1.11.2
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+Removing intermediate container 02f3606632d1
+ ---> ca8f3abaf35d
+Step 5/6 : EXPOSE 80
+ ---> Running in 17ca3c25c727
+Removing intermediate container 17ca3c25c727
+ ---> 9399049e1922
+Step 6/6 : CMD ["python", "app.py"]
+ ---> Running in 6cee946b3032
+Removing intermediate container 6cee946b3032
+ ---> a585e91c6c6d
+Successfully built a585e91c6c6d
+Successfully tagged project4:latest
+REPOSITORY   TAG             IMAGE ID       CREATED                  SIZE
+project4     latest          a585e91c6c6d   Less than a second ago   1.2GB
+<none>       <none>          7f7fdf436bd7   58 minutes ago           1.2GB
+python       3.7.3-stretch   34a518642c76   4 years ago              929MB
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 250-457-902
+[2023-09-27 14:40:28,605] INFO in app: JSON payload: 
+{'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
+[2023-09-27 14:40:28,619] INFO in app: Inference payload DataFrame: 
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2023-09-27 14:40:28,629] INFO in app: Scaling Payload: 
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2023-09-27 14:40:28,632] INFO in app: output prediction : 
+[20.35373177134412]
+172.17.0.1 - - [27/Sep/2023 14:40:28] "POST /predict HTTP/1.1" 200 -
